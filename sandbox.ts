@@ -1,35 +1,36 @@
+// Object and Arrays
+// Arrays
+let names = ['blessing', 'lola', 'yoshi'];
+names.push('mairo');
+// names.push(3);
+// names[0] = 3; 
+// when we declare new array the type we declared initially cannot be changed later on
+// In this case if I am to add a number to this array of names it won't work
 
-// The main fundamental between ts and js is that ts uses strict types and js does not.
-// if you define a variable like this
+let numbers = [10, 20, 30, 40];
+numbers.push(50);
+// numbers.push('lola');
+// numbers[1] = 'lola';
 
-let character = 'mairo'; 
-// it will aways be a string and it's type cannot change later and same is true for any type other type like number, boolean e.t.c
-// Variables a declared the same exactly as js
-// For decimal numbers there are no two seperate types like in other programming languages instead we have a number type which cover for both float and numbers types. In ts they are all numbers
-// This number cannot be assigned another type
-let age = 30;
-let isBlackBelt = false;
+// To have a mixed array we then have to initialize it first
+// With this you can change position and add multiple types initially declared
+let mixed = ['lola', 2, 4, 'dami'];
+mixed.push('rita');
+mixed.push(6);
+mixed[2] = 'sarah';
 
-// character = 20;
-character = 'luigi';
-// This means in ts you can change the vallue but not the types which is applicable to other types.
-// Strings can be specified using single or double quotes like in Js
-
-// age ='Blessing';
-age = 45;
-
-// isBlackBelt = 'yes';
-isBlackBelt = true;
-
-// We don't have to specifically say the type for the character is a string because
-// ts uses what's known as inference. It infers the type based of the value assigned
-// We can explicitly define what type of variable will be.
-
-const circ = (diameter: number) => {
-    return diameter * Math.PI;
+// objects
+let dev = {
+    name: 'blessing',
+    belt: 'black',
+    age: 25
 }
 
-console.log(circ(7.5));
-// console.log(circ('hello'));
-// This logs out NAN. To avoid this we need to define the type we want the output to be
-// TS allows us to type check during deployment which leads to cleaner code and less errors in the browser
+dev = {
+    name: 'lola',
+    belt: 'white',
+    age: 18,
+    // skills: []
+    // The skills added here will give an error because skills wasn't intitialized in the structure
+    // The values can chnage for the objecct but the keys remains the same
+}
